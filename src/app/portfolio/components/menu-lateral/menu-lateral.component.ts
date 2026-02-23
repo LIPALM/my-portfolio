@@ -6,7 +6,7 @@ import { ButtonLateralComponent } from "../button-lateral/button-lateral.compone
 @Component({
   selector: 'menu-lateral',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ButtonLateralComponent],
+  imports: [ButtonLateralComponent],
   templateUrl: './menu-lateral.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

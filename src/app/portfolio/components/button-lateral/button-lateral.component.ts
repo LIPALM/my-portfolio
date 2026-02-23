@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { GmailIcon } from '../../interfaces/GameIcon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
