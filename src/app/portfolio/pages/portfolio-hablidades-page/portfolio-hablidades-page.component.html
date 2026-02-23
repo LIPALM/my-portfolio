@@ -1,0 +1,36 @@
+<div class="flex flex-col gap-4">
+  <div class="flex flex-row items-center justify-center gap-3">
+    <img [src]="label()?.icon" class="w-15 h-15">
+    <h1 class="text-3xl font-bold text-gray-700" >{{ label()?.label }}</h1>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+    @for (category of categoriesInterface; track category.title) {
+      <div class="flex flex-col rounded-xl overflow-hidden shadow-lg shadow-black/45 ring-2 ring-white">
+
+        <div class="flex flex-row gap-2 bg-black/75 px-4 py-2 items-center">
+          <div class="flex flex-row gap-2">
+            <div class="w-4 h-4 bg-red-400 rounded-full"></div>
+            <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+          </div>
+          <div class="flex flex-col justify-center items-center text-xl w-full text-white font-bold tracking-wide">
+            {{ category.title }}
+          </div>
+        </div>
+
+        <div class="bg-black/60 h-full px-10 py-6">
+          <div class="grid grid-cols-4 gap-4">
+            @for (item of category.icons; track item.icon) {
+              <div class="flex flex-col items-center gap-2 hover:scale-115 transition ease-in-out">
+                <img [src]="item.icon" [alt]="item.label" class="w-16 h-16">
+                <span class="text-white">{{ item.label }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+
