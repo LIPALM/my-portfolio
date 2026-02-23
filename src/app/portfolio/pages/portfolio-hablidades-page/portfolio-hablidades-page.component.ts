@@ -26,6 +26,10 @@ export class PortfolioHablidadesPageComponent {
       label: 'JavaScript'
     },
     {
+      icon: 'icons/icons-fronted/skill-icons--tailwindcss-dark.svg',
+      label: 'Tailwind CSS'
+    },
+    {
       icon: 'icons/icons-fronted/skill-icons--angular-dark.svg',
       label: 'Angular'
     },

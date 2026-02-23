@@ -1,1 +1,29 @@
-<p>portfolio-formation-page works!</p>,
+<div class="flex flex-col gap-6 max-w-4xl w-full px-8">
+  <div class="flex flex-row justify-center items-center gap-3">
+    <img [src]="label()?.icon" alt="Formacion" class="w-15 h-15">
+    <h1 class="text-3xl font-bold text-gray-700">{{ label()?.label }}</h1>
+  </div>
+  <div class="flex flex-col shadow-lg shadow-black/45 inset-shadow-sm inset-shadow-black/40 ring-2 ring-white p-4 rounded-xl bg-white/60">
+    @for (item of formacion; track item.titleCarreer; let last = $last) {
+      <div class="flex flex-row gap-8">
+        <div class="flex flex-col items-center">
+          <div class="w-4 h-4 rounded-full bg-gray-100 ring-2 ring-white shadow-md shadow-black/30 inset-shadow-sm inset-shadow-black/20 mt-1 flex-shrink-0"></div>
+          @if (!last) {
+            <div class="w-0.5 bg-gray-200 flex-1 my-1"></div>
+          }
+        </div>
+        <div class="flex flex-row gap-10 flex-1">
+          <div class="flex flex-col gap-1 min-w-48 max-w-56">
+            <h2 class="text-base font-bold text-stone-600 leading-snug">{{ item.titleCarreer }}</h2>
+            <p class="text-sm text-gray-600 font-medium">{{ item.titleUniversity }}</p>
+            <p class="text-sm text-gray-400">{{ item.fechaInicio }} - {{ item.fechaFin }}</p>
+          </div>
+          <div class="flex-1">
+            <p class="text-sm text-gray-600 leading-relaxed">{{ item.Description }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>
