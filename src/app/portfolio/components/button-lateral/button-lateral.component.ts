@@ -12,6 +12,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class ButtonLateralComponent {
   iconsLateral : GmailIcon[] = [
       {
+      icon: 'icons/icons-lateral/codicon--home.svg',
+      label: 'Inicio',
+      route: '/'
+      },
+      {
         icon: 'icons/icons-lateral/codicon--json.svg',
         label: 'Habilidades',
         route: '/portafolio/habilidades'
@@ -31,6 +36,11 @@ export class ButtonLateralComponent {
         label: 'Formación',
         route: '/portafolio/formacion'
       },
+      {
+        icon: 'icons/icons-lateral/codicon--verified.svg',
+        label: 'Verificado',
+        route: '/portafolio/verificado'
+      }
     ]
 
 }

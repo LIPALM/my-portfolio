@@ -2,6 +2,7 @@
   @for ( item of iconsLateral; track item.route) {
     <a
       routerLinkActive="bg-gray-50 rounded-full shadow-lg shadow-black/50 inset-shadow-sm inset-shadow-black/50 ring-2 ring-white scale-110 duration-300 transition"
+      [routerLinkActiveOptions]="{ exact: true }"
       [routerLink]="item.route"
       class="p-3 hover:scale-110 transition-transform hover:bg-gray-50 hover:rounded-full"
       [title]="item.label">

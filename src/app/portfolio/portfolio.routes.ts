@@ -4,6 +4,8 @@ import { PortfolioHablidadesPageComponent } from "./pages/portfolio-hablidades-p
 import { PortfolioFormationPageComponent } from "./pages/portfolio-formation-page/portfolio-formation-page.component";
 import { PortfolioExperiencePageComponent } from "./pages/portfolio-experience-page/portfolio-experience-page.component";
 import { PortfolioProyectsPageComponent } from "./pages/portfolio-proyects-page/portfolio-proyects-page.component";
+import { PortfolioCertificationPageComponent } from "./pages/portfolio-certification-page/portfolio-certification-page.component";
+import { HomePageComponent } from "../shared/pages/home-page/home-page.component";
 
 export const PortfolioRoutes: Routes = [
 
@@ -28,9 +30,13 @@ export const PortfolioRoutes: Routes = [
         component: PortfolioProyectsPageComponent,
       },
       {
+        path: 'verificado',
+        component: PortfolioCertificationPageComponent,
+      },
+      {
         path: '**',
         redirectTo: 'habilidades',
-      }
+      },
     ]
   },
   {

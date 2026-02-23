@@ -13,3 +13,9 @@ export interface CategoriesInteface {
   title : string;
   icons : FrontedIconInterface[];
 }
+
+export interface CertificationInterface {
+  image: string;
+  title: string;
+  description: string;
+}
