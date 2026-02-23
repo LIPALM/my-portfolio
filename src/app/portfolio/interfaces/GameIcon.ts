@@ -19,3 +19,32 @@ export interface CertificationInterface {
   title: string;
   description: string;
 }
+
+
+export interface FormacionInterface {
+  titleCarreer: string;
+  titleUniversity: string;
+  fechaInicio: number;
+  fechaFin: number;
+  Description: string;
+}
+
+export interface ProjectImageInterface {
+  src: string;
+  alt: string;
+}
+
+export interface ProyectoInterface {
+  image: ProjectImageInterface[];
+  title: string;
+  description: string;
+  link: GitHubLinkInterface[];
+  technologies: FrontedIconInterface[];
+}
+
+
+export interface GitHubLinkInterface {
+  icon: string;
+  fronted: string;
+  backend: string;
+}
