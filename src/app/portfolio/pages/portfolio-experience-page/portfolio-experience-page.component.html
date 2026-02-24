@@ -1,1 +1,95 @@
-<p>portfolio-experience-page works!</p>,
+<div class="flex flex-col gap-6 max-w-3xl w-full px-4">
+  <div class="flex flex-row items-center justify-center gap-3">
+    <img [src]="label()?.icon" class="w-15 h-15">
+    <h1 class="text-3xl font-bold text-gray-700">{{ label()?.label }}</h1>
+  </div>
+  <div class="flex flex-col gap-3 p-5 rounded-2xl shadow-lg shadow-black/45 ring-2 ring-white bg-white/60 inset-shadow-sm inset-shadow-black/40">
+    <div class="flex flex-row items-center gap-2">
+      <div class="w-1 h-5 rounded-full bg-gray-400"></div>
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-widest">Perfil Profesional</h2>
+    </div>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Estudiante de Ingeniería de Sistemas con formación en desarrollo web full stack
+      utilizando React, Node.js, TypeScript y bases de datos relacionales y NoSQL.
+      Con conocimientos en diseño arquitectónico basado en el modelo 4+1 y arquitectura N-Tier (3 capas).
+      Interesado en realizar prácticas empresariales para aplicar conocimientos técnicos en
+      entornos reales, aportar soluciones eficientes y fortalecer competencias profesionales
+      en desarrollo de software.
+    </p>
+    <div class="flex flex-wrap gap-2 mt-1">
+      @for (skill of ['Trabajo en equipo', 'Comunicación efectiva', 'Gestión del tiempo', 'Adaptabilidad', 'Aprendizaje rápido', 'Resolución de problemas']; track skill) {
+        <span class="px-3 py-1 text-xs text-gray-500 bg-white/80 ring-1 ring-gray-200 rounded-full shadow-sm">
+          {{ skill }}
+        </span>
+      }
+    </div>
+  </div>
+  <div class="flex flex-row gap-4 px-1">
+    <div class="flex items-center gap-1.5">
+      <div class="w-2.5 h-2.5 rounded-full bg-blue-500"></div>
+      <span class="text-xs text-gray-500">Proyecto</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+      <span class="text-xs text-gray-500">Académico</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+      <span class="text-xs text-gray-500">Certificación</span>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    @for (item of experiencias; track item.titulo; let last = $last) {
+      <div class="flex flex-row gap-5">
+        <div class="flex flex-col items-center flex-shrink-0">
+          <div
+            class="w-3.5 h-3.5 rounded-full ring-2 ring-white shadow-md mt-1.5 flex-shrink-0"
+            [ngClass]="getDotColor(item.tipo)"
+          >
+          </div>
+          @if (!last) {
+            <div class="w-px bg-gray-200 flex-1 my-1 min-h-6"></div>
+          }
+        </div>
+        <div class="flex flex-col gap-3 pb-8 flex-1">
+          <div class="flex flex-col gap-3 p-4 rounded-2xl shadow-md shadow-black/20 ring-2 ring-white bg-white/60 hover:shadow-lg hover:shadow-black/25 transition-shadow inset-shadow-sm inset-shadow-black/20 hover:inset-shadow-black/30">
+            <div class="flex flex-row items-start justify-between gap-3">
+              <div class="flex flex-col gap-0.5">
+                <h2 class="text-base font-bold text-gray-800">{{ item.titulo }}</h2>
+                <p class="text-sm text-gray-500">{{ item.subtitulo }}</p>
+              </div>
+              <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                <span class="px-2.5 py-0.5 text-xs font-medium rounded-full"
+                      [ngClass]="getBadgeColor(item.tipo)">
+                  {{ getBadgeLabel(item.tipo) }}
+                </span>
+                <span class="text-xs text-gray-400">
+                  {{ item.fechaInicio }} – {{ item.fechaFin }}
+                </span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">{{ item.descripcion }}</p>
+            @if (item.tecnologias && item.tecnologias.length > 0) {
+              <div class="flex flex-wrap gap-1.5">
+                @for (tech of item.tecnologias; track tech) {
+                  <span class="px-2.5 py-0.5 text-xs text-gray-500 bg-white/80 ring-1 ring-gray-200 rounded-full shadow-sm">
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            }
+            @if (item.link) {
+              <div class="flex">
+                <a [href]="item.link" target="_blank"
+                  class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-600 shadow-md shadow-black/20 rounded-full ring-2 ring-white inset-shadow-sm inset-shadow-black/10 hover:scale-105 hover:text-gray-900 transition">
+                  <img src="icons/icons-herramientas/skill-icons--github-dark.svg" class="w-3.5 h-3.5">
+                  Ver repositorio
+                </a>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

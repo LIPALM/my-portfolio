@@ -48,3 +48,14 @@ export interface GitHubLinkInterface {
   fronted: string;
   backend: string;
 }
+
+export interface ExperienciaInterface {
+  tipo: 'academica' | 'proyecto' | 'certificacion';
+  titulo: string;
+  subtitulo: string;
+  fechaInicio: string;
+  fechaFin: string;
+  descripcion: string;
+  tecnologias?: string[];
+  link?: string;
+}

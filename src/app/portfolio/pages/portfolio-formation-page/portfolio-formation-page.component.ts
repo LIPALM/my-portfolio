@@ -14,7 +14,7 @@ export class PortfolioFormationPageComponent {
 
   ngOnInit() {
     this.label.set({
-      icon: 'icons/icons-lateral/codicon--verified.svg',
+      icon: 'icons/icons-lateral/simple-line-icons--graduation.svg',
       label: 'Formación',
       route: '/portafolio/formacion'
     })

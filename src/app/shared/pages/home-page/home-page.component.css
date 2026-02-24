@@ -1,4 +1,11 @@
-/* ── NOMBRE RGB Stone ── */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f5f5f4;
+  background-image: radial-gradient(circle, #c7c3c0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 .hero-name {
   display: inline-block;
   background: linear-gradient(
@@ -26,11 +33,9 @@
   100% { background-position: 200% 0; }
 }
 
-/* ── COLORES ── */
 .text-color  { color: #1e3a5f; }
 .text-color2 { color: #374151; }
 
-/* ── BOTONES BURBUJA ── */
 .btn-bubble {
   display: inline-flex;
   align-items: center;

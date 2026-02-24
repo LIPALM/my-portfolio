@@ -1,10 +1,8 @@
 <div class="flex flex-col gap-6 max-w-3xl w-full px-4">
-
   <div class="flex flex-row items-center justify-center gap-3">
     <img [src]="label()?.icon" class="w-15 h-15">
     <h1 class="text-3xl font-bold text-gray-700">{{ label()?.label }}</h1>
   </div>
-
   @for (project of proyecto; track project.title) {
     <div class="flex flex-col gap-0 rounded-2xl overflow-hidden shadow-lg shadow-black/45 ring-2 ring-white ">
       <div class="relative w-full rounded-2xl overflow-hidden">
@@ -19,7 +17,6 @@
         <prev-next-slide
           (prev)="prevSlide(project.title, project.image.length)"
           (next)="nextSlide(project.title, project.image.length)" />
-
         <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
           @for (img of project.image; track $index; let i = $index) {
             <button
@@ -32,7 +29,6 @@
           }
         </div>
       </div>
-
       <div class="flex flex-col gap-4 p-5 bg-white/60">
         <div class="flex flex-row items-center justify-between gap-4">
           <h2 class="text-lg font-bold text-gray-800">{{ project.title }}</h2>
@@ -52,8 +48,7 @@
           </div>
         </div>
         <p class="text-sm text-gray-500 leading-relaxed">{{ project.description }}</p>
-
-        <div class="grid grid-cols-5 gap-3 shadow-lg shadow-black/30 inset-shadow-sm rounded-2xl ring-2 ring-white bg-gray-100/50 p-2">
+        <div class="grid grid-cols-5 gap-3 inset-shadow-sm inset-shadow-black/30 rounded-2xl ring-2 ring-white bg-transparent p-2">
           @for (tech of project.technologies; track tech.icon) {
             <div class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-gray-50 hover:shadow-sm hover:ring-1 hover:ring-gray-100 transition cursor-default hover:scale-105 transition">
               <img [src]="tech.icon" class="w-10 h-10">
@@ -61,7 +56,6 @@
             </div>
           }
         </div>
-
       </div>
     </div>
   }
