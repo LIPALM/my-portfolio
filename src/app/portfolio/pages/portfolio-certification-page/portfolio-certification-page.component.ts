@@ -25,22 +25,37 @@ export class PortfolioCertificationPageComponent {
   certifications: CertificationInterface[] = [
     {
       image: 'img/certificaciones/html.png',
-      title: 'MiduDev',
+      title: 'HTML',
       description: 'Participación en la conferencia JSConf Chile Midu - 2024. Conectando con desarrolladores de toda América Latina'
     },
     {
       image: 'img/certificaciones/ccs.png',
-      title: 'MiduDev',
+      title: 'CSS',
       description: 'Descripción de esta certificación'
     },
     {
       image: 'img/certificaciones/javascript-2023-2024.png',
-      title: 'MiduDev',
-      description: 'Descripción de esta certificación'
+      title: 'JavaScript 2023-2024',
+      description: 'Obtención de la certificación JavaScript 2023-2024 por parte de MiduDev, demostrando habilidades avanzadas en programación JavaScript y desarrollo web.'
+    },
+    {
+      image: 'img/certificaciones/CSS_grid.png',
+      title: 'CSS Grid',
+      description: 'Obtención de la certificación CSS Grid por parte de MiduDev, demostrando habilidades avanzadas en diseño web y maquetación utilizando CSS Grid Layout.'
+    },
+    {
+      image: 'img/certificaciones/tailwind-desde-cero.png',
+      title: 'Tailwind desde Cero',
+      description: 'Obtención de la certificación Tailwind desde Cero por parte de MiduDev, demostrando habilidades avanzadas en diseño web y maquetación utilizando Tailwind CSS.'
     },
     {
       image: 'img/certificaciones/scrum-profesional.png',
       title: 'Scrum Master',
+      description: 'Descripción de esta certificación'
+    },
+    {
+      image: 'img/certificaciones/Certificado_Expocyt_2023-1.png',
+      title: 'Expocyt 2023',
       description: 'Descripción de esta certificación'
     }
   ];
